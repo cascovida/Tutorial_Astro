@@ -1,5 +1,5 @@
 ---
-title: Mi tercer post en el blog
+title: Mi tercer post del blog
 author: Astro alumno
 description: "Tuve algunos problemas, pero preguntar en la comunidad me ayudó mucho."
 image: 

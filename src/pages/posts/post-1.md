@@ -6,7 +6,7 @@ author: 'Astro alumno'
 image:
     url: 'https://astro.build/assets/blog/astro-1-release-update/cover.jpeg' 
     alt: 'El logotipo de Astro con la palabra One.'
-tags: ["astro", "bloguear", "aprender en público"]
+tags: ["astro", "aprender en público"]
 ---
 # Mi primer post en el blog
 
