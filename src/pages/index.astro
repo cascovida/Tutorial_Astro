@@ -1,25 +1,10 @@
 ---
-import '../styles/global.css';
-import Navigation from '../components/Navigation.astro';
-const pageTitle = "Página de inicio ";
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Greeting from '../components/Greeting.jsx';
+const pageTitle = "Home page";
+const messages = ["¡Hola!", "¿Qué tal?", "¡Hola a todos!"]
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="../../public/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-		<style>
-			h1 {
-				color: purple;
-				font-size: 4rem;
-			}
-		</style>
-	</head>
-	<body>
-    <Navigation />
-		<h1>Astro Tutorial</h1>
-	</body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+  <h2>Mi impresionante subtítulo del blog</h2>
+  <Greeting client:load messages={messages} />
+</BaseLayout>

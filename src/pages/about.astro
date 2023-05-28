@@ -1,13 +1,12 @@
 ---
-import "../styles/global.css";
-import Navigation from "../components/Navigation.astro";
-
+import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Sobre mi";
+
 const identity = {
   firstName: "Sarah Connor",
   country: "Canada",
-  ocuppation: "Escritor técnico",
-  hobbies: ["fotogrfía", "observación de aves", "peñarol"],
+  occupation: "Escritor técnico",
+  hobbies: ["fotografía", "observación de aves", "peñarol"],
 };
 const skills = [
   "HTML",
@@ -18,36 +17,14 @@ const skills = [
   "Redacción de documentos",
 ];
 const happy = true;
-const finished = false;
+const finished = true;
 const goal = 3;
 
 const skillColor = "navy";
 const fontWeight = "bold";
 const textCase = "uppercase";
 ---
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{pageTitle}</title>
-    <style define:vars={{ skillColor, fontWeight, textCase }}>
-      h1 {
-        color: purple;
-        font-size: 4rem;
-      }
-      .skill {
-        color: var(--skillColor);
-        font-weight: var(--fontWeight);
-        text-transform: var(--textCase);
-      }
-    </style>
-  </head>
-  <body>
-    <Navigation />
-    <h1>{pageTitle}</h1>
+<BaseLayout pageTitle={pageTitle}>
     <h2>... ¡y mi nuevo sitio Astro!</h2>
 
     <p>
@@ -63,7 +40,7 @@ const textCase = "uppercase";
     <p>He aquí algunos datos sobre mí</p>
     <ul>
       <li>Me llamo {identity.firstName}</li>
-      <li>Vivo en {identity.country}y trabajo como {identity.ocuppation}</li>
+      <li>Vivo en {identity.country}y trabajo como {identity.occupation}</li>
       {
         identity.hobbies.length >= 2 && (
           <li>
@@ -88,5 +65,4 @@ const textCase = "uppercase";
         <p>Mi objetivo no son 3 días.</p>
       )
     }
-  </body>
-</html>
+</BaseLayout>
